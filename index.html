@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crystal Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type ="text/css" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
 </head>
 
 
@@ -30,14 +33,16 @@
     </div>
 
     <div class="gems">
-        <img src="assets/images/emerald.jpeg" alt="emerald">
-        <img src="assets/images/ruby.jpg" alt="ruby">
-        <img src="assets/images/sapphire.jpg" alt="sapphire">
-        <img src="assets/images/topaz.jpg" alt="topaz">
+        <input type="image" src="assets/images/emerald.jpeg" id="emerald"/>
+        <input type="image" src="assets/images/ruby.jpg" id="ruby"/>
+        <input type="image" src="assets/images/sapphire.jpg" id="sapphire"/>
+        <input type="image" src="assets/images/topaz.jpg" id="topaz"/>
     </div>
     
-    <div class="totalScore">
-        <p>Your current score is: 0</p>
+    <div class="counterDiv">
+        <p>Your current score is:</p>
+        <br>
+        <p id="counter">0</p>
     </div>
 </body>
 </html>
