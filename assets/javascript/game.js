@@ -4,7 +4,7 @@ $(document).ready(function () {
 let counter = 0;
 let wins = 0;
 let losses = 0;
-let gameWin = false;
+let gameOver = false;
 
 let emerald = 0;
 let ruby = 0;
@@ -14,12 +14,47 @@ let targetNum = 0;
 
 function gameReset () {
     counter = 0;
-    let emerald = (Math.floor(Math.random() * 12 + 1));
-    let ruby = (Math.floor(Math.random() * 12 + 1));
-    let sapphire = (Math.floor(Math.random() * 12 + 1));
-    let topaz = (Math.floor(Math.random() * 12 + 1));
-    console.log(emerald, ruby, sapphire, topaz)
-    gameWin = false;
+    emerald = (Math.floor(Math.random() * 12 + 1));
+    ruby = (Math.floor(Math.random() * 12 + 1));
+    sapphire = (Math.floor(Math.random() * 12 + 1));
+    topaz = (Math.floor(Math.random() * 12 + 1));
+    targetNum = Math.floor(Math.random() * 101) + 20;
+    gameOver = false;
+}
+
+gameReset();
+
+// Check for game Status
+/* if (gameOver) {
+    gameReset();
+} else {
+    return false;
+} */
+
+
+$("#emerald").on("click", function () {
+    counter += emerald;
+    console.log(counter);
+})
+$("#ruby").on("click", function () {
+    counter += ruby;
+    console.log(counter);
+})
+$("#sapphire").on("click", function () {
+    counter += sapphire;
+    console.log(counter);
+})
+$("#topaz").on("click", function () {
+    counter += topaz;
+    console.log(counter);
+})
+
+if ( counter === targetNum ) {
+    wins++;
+    gameReset();
+} else if ( counter > targetNum ) {
+    losses++;
+    gameReset();
 }
 
 
